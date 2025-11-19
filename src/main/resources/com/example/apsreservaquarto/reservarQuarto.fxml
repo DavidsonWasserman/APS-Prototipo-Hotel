@@ -7,45 +7,57 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-<ScrollPane maxHeight="100.0" maxWidth="350.0" style="-fx-background-color: #000000; -fx-padding: 0;" StackPane.alignment="TOP_CENTER">
-<content>
-    <ListView fx:id="reviewsList" prefHeight="100.0" prefWidth="350.0" style="-fx-background-color: #000000;">
-        <cursor>
-            <Cursor fx:constant="DEFAULT" />
-        </cursor></ListView>
-</content>
-      <StackPane.margin>
-         <Insets top="100.0" />
-      </StackPane.margin>
-</ScrollPane>
-   <Label prefHeight="18.0" prefWidth="350.0" text="Selecione o quarto:" StackPane.alignment="TOP_CENTER">
-      <StackPane.margin>
-         <Insets top="70.0" />
-      </StackPane.margin>
-      <font>
-         <Font size="20.0" />
-      </font>
-   </Label>
-   <DatePicker prefHeight="26.0" prefWidth="85.0" StackPane.alignment="TOP_CENTER">
-      <StackPane.margin>
-         <Insets left="265.0" top="210.0" />
-      </StackPane.margin>
-   </DatePicker>
-   <Label alignment="TOP_LEFT" prefHeight="18.0" prefWidth="350.0" text="Selecione o perido da estadia:" StackPane.alignment="TOP_CENTER">
-      <font>
-         <Font size="20.0" />
-      </font>
-      <StackPane.margin>
-         <Insets top="209.0" />
-      </StackPane.margin>
-   </Label>
-   <Button mnemonicParsing="false" text="Reservar" StackPane.alignment="TOP_CENTER">
-      <StackPane.margin>
-         <Insets top="300.0" />
-      </StackPane.margin>
-   </Button>
+<StackPane prefHeight="510" prefWidth="600" style="-fx-background-color:#2C3E50" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.apsreservaquarto.controllers.ReservaController">
+
+    <VBox alignment="TOP_CENTER" maxWidth="420" spacing="20">
+
+        <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;" text="Selecione o quarto:">
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin></Label>
+
+        <StackPane style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 10;">
+            <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="105.0" prefWidth="400.0" style="-fx-background-color: transparent;">
+                <content>
+                    <ListView fx:id="quartoList" prefHeight="92.0" prefWidth="398.0">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor></ListView>
+                </content>
+            </ScrollPane>
+        </StackPane>
+
+        <VBox alignment="CENTER_LEFT" spacing="10">
+            <Label style="-fx-font-size: 16px; -fx-text-fill: white;" text="Início da estadia:" />
+
+            <DatePicker fx:id="dataInicio" prefWidth="200">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></DatePicker>
+
+            <Label style="-fx-font-size: 16px; -fx-text-fill: white;" text="Fim da estadia:" />
+
+            <DatePicker fx:id="dataFim" prefWidth="200" />
+        </VBox>
+
+        <VBox alignment="CENTER_LEFT" spacing="5">
+            <Label style="-fx-font-size: 16px; -fx-text-fill: white;" text="Valor da reserva:" />
+
+            <TextField fx:id="valorReserva" prefWidth="283.0" promptText="Selecione o quarto e a estadia">
+            <VBox.margin>
+               <Insets right="220.0" />
+            </VBox.margin></TextField>
+        </VBox>
+
+        <Label fx:id="mensagemError" style="-fx-text-fill: #ff3333; -fx-font-size: 14px;" text="Mensagem de Erro" visible="false" />
+
+        <Button fx:id="btnReservar" onAction="#onReservar" style="-fx-background-color: #0059b3;                        -fx-text-fill: white;                        -fx-padding: 10 30;                        -fx-background-radius: 8;                        -fx-font-size: 16px;                        -fx-font-weight: bold;                        -fx-cursor: hand;" text="Reservar">
+         <VBox.margin>
+            <Insets bottom="15.0" />
+         </VBox.margin></Button>
+    </VBox>
 </StackPane>

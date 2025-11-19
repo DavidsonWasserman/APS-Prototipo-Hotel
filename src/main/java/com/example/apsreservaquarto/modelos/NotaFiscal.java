@@ -1,5 +1,7 @@
 package com.example.apsreservaquarto.modelos;
 
+import java.time.LocalDate;
+
 public class NotaFiscal {
     private static int COUNTER = 1;
     private final int id;

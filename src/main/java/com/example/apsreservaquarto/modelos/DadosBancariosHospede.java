@@ -9,6 +9,6 @@ public class DadosBancariosHospede {
         this.tipoCartao = tipoCartao;
     }
 
-    public String getnCartao() { return numCartao; }
+    public String getnumCartao() { return numCartao; }
     public String getTipoCartao() { return tipoCartao; }
 }
