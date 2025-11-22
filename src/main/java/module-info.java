@@ -3,7 +3,6 @@ module com.example.apsreservaquarto {
     requires javafx.fxml;
     requires javafx.graphics;
 
-
     opens com.example.apsreservaquarto to javafx.fxml;
     exports com.example.apsreservaquarto;
     exports com.example.apsreservaquarto.modelos;

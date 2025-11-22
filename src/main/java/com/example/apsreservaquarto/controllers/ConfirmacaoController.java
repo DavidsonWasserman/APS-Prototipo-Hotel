@@ -4,6 +4,7 @@ import com.example.apsreservaquarto.DTO;
 import com.example.apsreservaquarto.Launcher;
 import com.example.apsreservaquarto.modelos.Hospede;
 import com.example.apsreservaquarto.modelos.Quarto;
+import com.example.apsreservaquarto.modelos.ReservaFinalizada;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,13 +35,14 @@ public class ConfirmacaoController {
     private DTO dto;
     private Hospede hospede;
     private List<Quarto> quartos;
+    private List<ReservaFinalizada> reservasFinalizadas;
 
-    public void setDados(DTO dto, Hospede hospede, List<Quarto> quartos) {
+    public void setDados(DTO dto, Hospede hospede, List<Quarto> quartos, List<ReservaFinalizada> reservaFinalizadas) {
         this.dto = dto;
         this.hospede = hospede;
         this.quartos = quartos;
+        this.reservasFinalizadas = reservaFinalizadas;
         preenchertela();
-
     }
 
     private void preenchertela() {
@@ -78,6 +80,7 @@ public class ConfirmacaoController {
         ReservaController reservaController = loader.getController();
         reservaController.setHospede(hospede);
         reservaController.setQuartos(quartos);
+        reservaController.setReservasFinalizadas(reservasFinalizadas);
 
         Stage stage = (Stage) btnCancelar.getScene().getWindow();
         stage.setScene(new Scene(root, 600, 600));
