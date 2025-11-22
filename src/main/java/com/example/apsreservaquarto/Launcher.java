@@ -18,6 +18,7 @@ public class Launcher extends Application {
         Quarto quarto2 = new Quarto(2,201,200);
         Quarto quarto3 = new Quarto(3,301,300);
         Quarto quarto4 = new Quarto(4,401,400);
+        quarto3.setOcupado(true);
         List<Quarto> listaQuartos = Arrays.asList(quarto1,quarto2,quarto3,quarto4);
 
         //Cliente "logado" para exibir informações

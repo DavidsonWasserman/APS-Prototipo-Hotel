@@ -126,6 +126,11 @@ public class ReservaController {
             mensagemError.setVisible(true);
             return;
         }
+        if(quartoSelecionado.isEstaOcupado()) {
+            mensagemError.setText("O quarto deve estar disponivel");
+            mensagemError.setVisible(true);
+            return;
+        }
         if (dataInicio.getValue() == null || dataFim.getValue() == null) {
             mensagemError.setText("Data de início e/ou fim não selecionadas");
             mensagemError.setVisible(true);
