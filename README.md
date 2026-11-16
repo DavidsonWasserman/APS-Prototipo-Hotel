@@ -1,4 +1,4 @@
-# APS-Prototipo-Hotel
+# Protótipo de reserva de hotel (IC812)
 
 Protótipo JavaFX de reserva de quarto de hotel (simulação com dados fixos), feito para a disciplina IC812 — Análise e Projeto de Sistemas (UFRRJ), junto com o documento de requisitos da turma.
 
