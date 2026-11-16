@@ -5,7 +5,7 @@ Protótipo JavaFX de reserva de quarto de hotel (simulação com dados fixos), f
 | Seleção do quarto e das datas | Confirmação da reserva |
 |---|---|
 | ![Tela de reserva de quarto](docs/img/01-reservar-quarto.png) | ![Tela de confirmação da reserva](docs/img/04-confirmacao-dados.png) |
-| Lista de quartos (número, andar, diária e situação), campos de início e fim da estadia e botão Reservar. | Dados do hóspede, cartão (últimos dígitos e bandeira), quarto, andar, período e valor total. |
+| Quartos, datas da estadia e botão Reservar. | Hóspede, cartão, quarto, período e valor total. |
 
 ## Como executar
 
@@ -43,7 +43,7 @@ Este repositório reúne duas coisas distintas:
 
 ## Protótipo JavaFX (`src/`)
 
-São duas telas (`reservarQuarto` e `reservarConfirmacao`). O hóspede "logado", os quartos e uma reserva existente são dados fixos no `Launcher` (dados fictícios de simulação); nada é lido de banco ou arquivo.
+São duas telas (`reservarQuarto` e `reservarConfirmacao`). O hóspede "logado", os quartos e uma reserva existente são dados fixos no `Launcher`; nada é lido de banco ou arquivo.
 
 ### Funcionalidades
 
@@ -76,7 +76,7 @@ Documento produzido pela equipe, conforme a capa do PDF:
 
 ### Casos de uso (16, numerados UC 001 a UC 016 no PDF)
 
-Cada um tem objetivo, atores, precondições, fluxo principal, regras de negócio e fluxos alternativos e de exceção (detalhes no [PDF](docs/entregafinalprojeto.pdf)).
+Cada um tem objetivo, atores, fluxo principal e regras de negócio; a maioria também tem fluxos alternativos e de exceção (detalhes no [PDF](docs/entregafinalprojeto.pdf)).
 
 1. Cadastrar Cliente
 2. Cadastrar Funcionário
@@ -140,7 +140,8 @@ Outros diagramas do mesmo documento, em imagens separadas por serem largos:
 - JavaFX 21.0.6 (`javafx-controls`, `javafx-fxml`), telas em FXML
 - Maven e `javafx-maven-plugin` 0.0.8 (há `mvnw` na raiz)
 
-## Estrutura de pastas
+<details>
+<summary><strong>Estrutura de pastas</strong></summary>
 
 ```
 .
@@ -157,13 +158,14 @@ Outros diagramas do mesmo documento, em imagens separadas por serem largos:
     └── resources/com/example/apsreservaquarto/   reservarQuarto.fxml, reservarConfirmacao.fxml
 ```
 
+</details>
+
 ## Decisões de projeto
 
 - Dados fixos criados no `Launcher`, sem banco de dados: o protótipo simula o fluxo de reserva.
 - Um objeto `DTO` leva a escolha de quarto e datas da primeira tela para a de confirmação.
-- As classes de `modelos/` seguem o diagrama de classes da equipe, com as diferenças listadas acima.
 
 ## Autores
 
-- Documento de requisitos: equipe listada na capa do PDF (Davidson Wasserman, Elias Santos, Lucas Nunes, Nicolas Duarte, Thiago Janine e Vinicius Gevu).
+- Documento de requisitos: equipe listada na capa do PDF (acima).
 - Protótipo JavaFX (`src/`): Davidson Wasserman.
